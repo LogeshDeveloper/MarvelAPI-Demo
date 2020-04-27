@@ -22,14 +22,14 @@ export default function Character() {
   dataMarvel.then(response => setData(response));
 
   const dispatch = useDispatch();
-
+  console.log(data);
   useEffect(() => {
     const getDataMarvel = () => {
       dispatch(allActions.characterActions.requestGetMarvelId(characterId));
     };
     getDataMarvel();
   }, []);
-  
+
   console.log(Response)
   return (
     <>
@@ -53,7 +53,7 @@ export default function Character() {
         </div>
         <div className="series">
           <div className="title">Series</div>
-          <Collapsible/>
+          <Collapsible />
           <div className="serieContent">
             {data?.loading && (
               <>
@@ -68,8 +68,8 @@ export default function Character() {
                 <CardSerie data={response} key={response?.id} />
               ))
             ) : (
-              <NotEmpty text="Series não encontrado!!" />
-            )}
+                <NotEmpty text="Series não encontrado!!" />
+              )}
           </div>
         </div>
       </Container>
