@@ -17,6 +17,27 @@ export const Container = styled.div`
     height: 30px;
   } */
 
+  .btn{
+    background-color: #202020; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align: right;
+  }
+
+  .btn:hover{
+    background-color: #000000;
+    
+  }
+
   img {
     height: 100%;
   }

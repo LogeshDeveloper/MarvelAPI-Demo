@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import logo from '../../assets/logo.png';
 import allActions from '../../store/actions';
 import { Container } from './styles';
+import { Link } from 'react-router-dom';
 
 export default function Header({ showSearch }) {
   const [search, setSearch] = useState('');
@@ -25,7 +26,13 @@ export default function Header({ showSearch }) {
   return (
     <Container>
       <img src={logo} alt="Marvel App" />
-      {showSearch && (
+      <Link to="/">
+      <button className="btn">Home</button></Link>
+      <Link to="/characterinfo">
+          <button className="btn">Drag&Drop</button></Link>
+          <Link to="/chart">
+          <button className="btn">Charts</button></Link>
+          {showSearch && (
         <div className="containerSearch">
           <input
             type="text"

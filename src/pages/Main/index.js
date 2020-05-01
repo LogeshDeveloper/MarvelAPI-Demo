@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Col1 from '../../components/Card/Col1';
-import Col2 from '../../components/Card/Col2';
-import Col3 from '../../components/Card/Col3';
+import Card from '../../components/Card';
 import CardLoading from '../../components/CardLoading';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import NotEmpty from '../../components/NotEmpty';
 import allActions from '../../store/actions';
 import { Container } from './styles';
-import Charts from '../../components/Charts'
-
+import Charts from '../../components/Charts';
 
 export default function Main() {
   const [data, setData] = useState({});
@@ -42,7 +39,15 @@ export default function Main() {
             <CardLoading /> <CardLoading /> <CardLoading />
           </>
         )}
-       <Col1/><Col2/><Col3/>
+        {data?.error && <h1>Error ...</h1>}
+        {data?.data?.length !== 0 ? (
+          data?.data?.map(dataMap => {
+            return <Card data={dataMap} key={dataMap.id} />
+            
+          })
+        ) : (
+          <NotEmpty text="Not Available" />
+        )}
       </Container>
       <Footer />
     </>

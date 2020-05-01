@@ -10,7 +10,6 @@ import NotEmpty from '../../components/NotEmpty';
 import ProfileLoading from '../../components/ProfileLoading';
 import allActions from '../../store/actions';
 import { Container } from './styles';
-import Charts from '../../components/Charts'
 import Collapsible from '../../components/Collapsible Control'
 
 export default function Character() {
