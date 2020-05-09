@@ -2,23 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  flex-wrap: wrap;
   padding: 20px 100px;
   overflow-x: hidden;
   overflow-y: scroll;
   margin:0;
-  height: calc(100% - 120px);
-  width: 100vw;
   font-size: 18px;
 
   .charecterList {
      border: 2px solid red;
      border-radius: 8px;
-     width: 20vw;
-     height: 75vh;
+     width: 15vw;
+     height: 85vh;
      background: black;
      color: white;
      overflow: scroll;
@@ -29,7 +25,7 @@ export const Container = styled.div`
       margin-right: auto;
       width: 50%;
       margin-top: 1em;
-      height: 160px;
+      height: 70px;
       cursor: pointer;
     }
     ::-webkit-scrollbar {
@@ -47,18 +43,17 @@ export const Container = styled.div`
     
   }
 
-
-  .characterInfo {
+  .characterInfo1 , .characterInfo2 , .characterInfo3{
    margin-left: 2em;
    border: 2px solid red;
    border-radius: 8px;
-   width: 50vw;
-   height: 75vh;
+   width: 30vw;
+   height: 85vh;
    background: black;
    color: white;
    img {
     width: 100%;
-    height: 242px;
+    height: 150px;
     margin: 2em;
    }
    overflow-x: hidden;
