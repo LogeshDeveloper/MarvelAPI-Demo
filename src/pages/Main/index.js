@@ -8,7 +8,6 @@ import Header from '../../components/Header';
 import NotEmpty from '../../components/NotEmpty';
 import allActions from '../../store/actions';
 import { Container } from './styles';
-import Charts from '../../components/Charts';
 
 export default function Main() {
   const [data, setData] = useState({});

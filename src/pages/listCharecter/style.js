@@ -52,8 +52,8 @@ export const Container = styled.div`
    background: black;
    color: white;
    img {
-    width: 100%;
-    height: 150px;
+    width: 105%;
+    height: 110px;
     margin: 2em;
    }
    overflow-x: hidden;
@@ -79,6 +79,7 @@ export const Container = styled.div`
     padding: 0.5em;
     width: 100%;
   }
+  
   .selectedCharacter{
     border : 2px solid red;
   }

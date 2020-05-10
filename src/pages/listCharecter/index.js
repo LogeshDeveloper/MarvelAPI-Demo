@@ -8,7 +8,8 @@ import {
 } from "react-collapsible-component";
 import allActions from '../../store/actions';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer'
+import Footer from '../../components/Footer';
+import CardLoading from '../../components/CardLoading';
 
 
 export default function ListCharacter() {
@@ -17,7 +18,6 @@ export default function ListCharacter() {
   const [d0, setD0] = useState(null);
   const [d1, setD1] = useState(null);
   const [d2, setD2] = useState(null);
-  const [d3, setD3] = useState(null);
 
   const [selectedId, setSelectedId] = useState(0);
   const [draggedContent, setDraggedContent] = useState(null)
@@ -43,7 +43,6 @@ export default function ListCharacter() {
     setDraggedContent(index);
   }
 
-
   const captureDrag = (boxIndex, e) => {
     e.preventDefault();
     setSelectedId(draggedContent);
@@ -59,8 +58,7 @@ export default function ListCharacter() {
         break;
       case 2:
         setD2(data.data[draggedContent]); 
-      case 3:
-        setD3(data.data[draggedContent]);   
+        break;
     }
   }
   const dragOver = (e) => {
@@ -71,9 +69,17 @@ export default function ListCharacter() {
       <Header />
       <Container>
         <div className='charecterList' >
+        {data?.loading && (
+              <>
+                <CardLoading /> <CardLoading /> <CardLoading />
+                <CardLoading /> <CardLoading /> <CardLoading />
+                <CardLoading /> <CardLoading /> <CardLoading />
+                <CardLoading />
+              </>
+            )}
           {
-            data?.data &&
-
+            data?.data && 
+            
             data.data.map((item, index) =>
               <div ref={reference} onDragStart={() => dragStart(index)} draggable={true} key={index} >
                 <div><img className={index === selectedId ? 'selectedCharacter' : ''} ref={reference} onClick={() => selectCharacter(index)} alt='' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} /></div>
@@ -97,7 +103,7 @@ export default function ListCharacter() {
                   <p>{d0.description}</p>
                 </div>
               </div>
-              <CollapsibleComponent>
+              <CollapsibleComponent name='box1'>
                 <>
                   <div className='comic-holder'>
 
@@ -140,7 +146,6 @@ export default function ListCharacter() {
         </div>
 
         <div onDrop={captureDrag.bind(this, 1)} onDragOver={dragOver} className='characterInfo2'>
-
 {
   data?.data && data.data.length && d1 &&
   <div className='row-content'>
@@ -153,7 +158,7 @@ export default function ListCharacter() {
         <p>{d1.description}</p>
       </div>
     </div>
-    <CollapsibleComponent>
+    <CollapsibleComponent name='box2'>
       <>
         <div className='comic-holder'>
 
@@ -184,18 +189,15 @@ export default function ListCharacter() {
               : ''
             }
           </CollapsibleContent>
-
-
         </div>
       </>
     </CollapsibleComponent>
-
   </div>
-
 }
 </div>
-<div onDrop={captureDrag.bind(this, 2)} onDragOver={dragOver} className='characterInfo3'>
 
+
+<div onDrop={captureDrag.bind(this, 2)} onDragOver={dragOver} className='characterInfo3'>
 {
   data?.data && data.data.length && d2 &&
   <div className='row-content'>
@@ -208,7 +210,7 @@ export default function ListCharacter() {
         <p>{d2.description}</p>
       </div>
     </div>
-    <CollapsibleComponent>
+    <CollapsibleComponent name='box3'>
       <>
         <div className='comic-holder'>
 

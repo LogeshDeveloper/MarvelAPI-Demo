@@ -23,25 +23,35 @@ export const Container = styled.div`
     width: 20%;
     flex: 1;
   }
+
+  .characterName {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    width: 100%;
+    font-size: 15px
+  }
+
   .listContainer {
     .charecterList {
       border: 2px solid red;
-      border-radius: 8px;
-      width: 20vw;
-      height: 75vh;
-      background: black;
-      color: white;
-      overflow: scroll;
-      border: 1px solid #ccc;
-      img {
-       display: block;
-       margin-left: auto;
-       margin-right: auto;
-       width: 50%;
-       margin-top: 1em;
-       height: 160px;
-       cursor: pointer;
-     }
+     border-radius: 8px;
+     width: 10.5vw;
+     height: 80vh;
+     background: black;
+     color: white;
+     overflow: scroll;
+     border: 1px solid #ccc;
+     img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      margin-top: 1em;
+      height: 85px;
+      cursor: pointer;
+    }
      ::-webkit-scrollbar {
        width: 12px;
      }

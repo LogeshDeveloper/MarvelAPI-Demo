@@ -10,7 +10,6 @@ import NotEmpty from '../../components/NotEmpty';
 import ProfileLoading from '../../components/ProfileLoading';
 import allActions from '../../store/actions';
 import { Container } from './styles';
-import Collapsible from '../../components/Collapsible Control'
 
 export default function Character() {
   const { characterId } = useParams();
@@ -52,7 +51,6 @@ export default function Character() {
         </div>
         <div className="series">
           <div className="title">Series</div>
-          <Collapsible />
           <div className="serieContent">
             {data?.loading && (
               <>
